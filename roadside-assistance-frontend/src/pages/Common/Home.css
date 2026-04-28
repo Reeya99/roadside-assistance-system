@@ -1,0 +1,212 @@
+/* HERO */
+.hero {
+  height: 90vh;
+  background: url('../../assets/hero_bg.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+  font-size: 48px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-buttons button {
+  margin-right: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary {
+  background: #0d6efd;
+  color: white;
+  border: none;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.hero-buttons button:hover {
+  transform: scale(1.1);
+}
+
+/* SERVICES */
+.services {
+  padding: 40px;
+  text-align: center;
+}
+
+.service-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.service-card {
+  padding: 25px 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  width: 190px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card .icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-card p {
+  font-weight: 600;
+  margin: 0;
+  font-size: 16px;
+}
+
+.service-hover-desc {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--card-hover);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  transition: bottom 0.4s ease;
+  font-weight: 500;
+  opacity: 0;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-card:hover .service-hover-desc {
+  bottom: 0;
+  opacity: 1;
+}
+
+.service-card:hover .icon {
+  transform: scale(0.8) translateY(-20px);
+  opacity: 0;
+}
+
+.service-card:hover p {
+  opacity: 0;
+}
+
+/* WHY SECTION */
+.why {
+  padding: 40px;
+  text-align: center;
+}
+
+.why-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.why-card {
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  width: 200px;
+  transition: 0.3s;
+  border: 1px solid var(--border-color);
+}
+
+/* WAVE HOVER EFFECT */
+.why-card:hover {
+  animation: wave 0.5s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* RESPONSIVENESS */
+@media screen and (max-width: 900px) {
+  .hero {
+    padding: 20px;
+    height: auto;
+    min-height: 80vh;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-buttons button {
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .service-grid, .why-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .service-card, .why-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}

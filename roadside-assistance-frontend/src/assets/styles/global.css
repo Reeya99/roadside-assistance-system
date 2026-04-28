@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color: #f4f6f8;
+  --text-color: #1f2937;
+  --navbar-bg: #ffffff;
+  --link-color: #4b5563;
+  --border-color: #e5e7eb;
+  --card-bg: #ffffff;
+  --card-hover: #f3f4f6;
+  --input-bg: #ffffff;
+}
+
+body.dark {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  --navbar-bg: #1f2937;
+  --link-color: #e5e7eb;
+  --border-color: #374151;
+  --card-bg: #1f2937;
+  --card-hover: #374151;
+  --input-bg: #374151;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}

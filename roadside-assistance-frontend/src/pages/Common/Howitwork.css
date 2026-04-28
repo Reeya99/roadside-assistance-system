@@ -1,0 +1,703 @@
+/* ===================== */
+/* HOWITWORK PAGE STYLES */
+/* ===================== */
+
+.howitwork-container {
+  width: 100%;
+  background: var(--bg-color);
+  padding: 60px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================== */
+/* HEADER SECTION */
+/* ================== */
+
+.howitwork-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Decorations */
+.header-decoration-left,
+.header-decoration-right {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.15;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.header-decoration-left {
+  left: 5%;
+  top: -30px;
+  color: #3B82F6;
+  animation-delay: 0s;
+}
+
+.header-decoration-right {
+  right: 5%;
+  top: 20px;
+  color: #10B981;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.header-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 20px 0;
+  letter-spacing: -1px;
+  animation: slideIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  color: var(--link-color);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================== */
+/* STEPS SECTION */
+/* ================== */
+
+.steps-section {
+  margin-bottom: 100px;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+/* Step Card */
+.step-card {
+  position: relative;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 16px;
+  padding: 40px 25px 30px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  animation: scaleIn 0.6s ease-out both;
+  flex: 0 1 calc(20% - 32px);
+  min-width: 180px;
+  max-width: 220px;
+  border: 1px solid var(--border-color);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Staggered Animation */
+.step-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.step-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.step-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.step-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.step-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Hover Effects */
+.step-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.15) rotateY(10deg);
+}
+
+.step-card:hover .step-title {
+  color: #3B82F6;
+}
+
+.step-card.active {
+  transform: translateY(-15px) scale(1.05);
+}
+
+/* Step Number */
+.step-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  animation: fadeIn 0.5s ease-out;
+  display: inline-block;
+  background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Step Icon Container */
+.step-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  perspective: 1000px;
+}
+
+/* Step Title */
+.step-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 15px 0 12px 0;
+  transition: all 0.3s ease;
+}
+
+/* Step Description */
+.step-description {
+  font-size: 0.95rem;
+  color: var(--link-color);
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+/* Step Underline */
+.step-underline {
+  width: 50px;
+  height: 4px;
+  margin: 15px auto;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover .step-underline {
+  width: 70px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Arrow */
+.step-arrow {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.step-arrow:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Hide arrows on smaller screens */
+@media (max-width: 1200px) {
+  .step-arrow {
+    display: none;
+  }
+}
+
+/* ================== */
+/* BENEFITS SECTION */
+/* ================== */
+
+.benefits-section {
+  margin-top: 80px;
+  padding: 60px 20px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.benefits-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-color);
+  margin: 0 0 15px 0;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.benefits-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+  border-radius: 2px;
+  margin: 0 auto 50px;
+  animation: expandWidth 0.8s ease-out 0.3s both;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Benefit Card */
+.benefit-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: popIn 0.6s ease-out both;
+  border: 1px solid var(--border-color);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered Animation for Benefits */
+.benefit-card:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.benefit-card:nth-child(2) {
+  animation-delay: 0.65s;
+}
+
+.benefit-card:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.benefit-card:nth-child(4) {
+  animation-delay: 0.75s;
+}
+
+.benefit-card:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Benefit Card Hover */
+.benefit-card:hover {
+  transform: translateY(-12px) scale(1.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.benefit-card:hover::before {
+  left: 100%;
+}
+
+/* Benefit Icon */
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotateZ(-45deg);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateZ(0deg);
+  }
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.3) rotateZ(15deg);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Benefit Title */
+.benefit-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-title {
+  color: #3B82F6;
+}
+
+/* Benefit Description */
+.benefit-description {
+  font-size: 0.9rem;
+  color: var(--link-color);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ================== */
+/* COLOR ANIMATIONS */
+/* ================== */
+
+@keyframes colorShift {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(15deg);
+  }
+}
+
+.benefit-card.hovered {
+  animation: colorShift 0.6s ease-in-out;
+  background: linear-gradient(135deg, #f0f4ff 0%, #f9f5ff 100%);
+}
+
+/* ================== */
+/* RESPONSIVE DESIGN */
+/* ================== */
+
+@media (max-width: 1024px) {
+  .steps-container {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .step-card {
+    flex: 0 1 calc(33.333% - 17px);
+    min-width: 160px;
+  }
+
+  .header-title {
+    font-size: 2.8rem;
+  }
+
+  .benefits-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .howitwork-container {
+    padding: 40px 15px;
+  }
+
+  .steps-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .step-card {
+    flex: 0 1 calc(50% - 10px);
+    min-width: 140px;
+    padding: 30px 20px;
+  }
+
+  .header-title {
+    font-size: 2.2rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+
+  .benefits-section {
+    padding: 40px 20px;
+  }
+
+  .benefits-title {
+    font-size: 1.8rem;
+  }
+
+  .benefit-card {
+    padding: 25px 15px;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .benefit-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .howitwork-container {
+    padding: 30px 10px;
+  }
+
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .steps-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .step-card {
+    flex: 0 1 100%;
+    min-width: unset;
+    padding: 25px 15px;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+  }
+
+  .step-title {
+    font-size: 1rem;
+  }
+
+  .step-description {
+    font-size: 0.85rem;
+  }
+
+  .benefits-title {
+    font-size: 1.5rem;
+  }
+
+  .benefit-title {
+    font-size: 1rem;
+  }
+
+  .benefit-description {
+    font-size: 0.85rem;
+  }
+
+  .header-decoration-left,
+  .header-decoration-right {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+/* ================== */
+/* ACCESSIBILITY */
+/* ================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ================== */
+/* ADDITIONAL EFFECTS */
+/* ================== */
+
+/* Gradient Text Effect */
+.step-number {
+  background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth Color Transitions */
+.step-card {
+  background: var(--card-bg);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.step-card:hover {
+  background: var(--card-hover);
+}
+
+/* Glow Effect on Hover */
+.step-card:hover .step-icon {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.benefit-card:hover {
+  background: var(--card-hover);
+}
+
+/* Loading-like Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
