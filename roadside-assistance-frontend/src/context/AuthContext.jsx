@@ -7,8 +7,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Set default baseURL
-  axios.defaults.baseURL = 'http://localhost:5000/api';
+  // Set default baseURL dynamically
+  axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
   useEffect(() => {
     const checkLoggedIn = async () => {
