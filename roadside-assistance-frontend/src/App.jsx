@@ -3,6 +3,8 @@ import AppRoutes from "./routes/AppRoutes";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import Preloader from "./components/Preloader/Preloader";
+import NotificationPopup from "./components/Notification/NotificationPopup";
+import ActiveJobPanel from "./components/Notification/ActiveJobPanel";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -20,6 +22,8 @@ function App() {
     <ThemeProvider>
       <AuthProvider>
         {loading && <Preloader />}
+        <NotificationPopup />
+        <ActiveJobPanel />
         <AppRoutes />
       </AuthProvider>
     </ThemeProvider>
